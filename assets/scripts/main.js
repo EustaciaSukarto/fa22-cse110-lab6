@@ -79,7 +79,7 @@ function initFormHandler() {
   document.querySelector('button[type="submit"]').addEventListener('click', function() {
   // Steps B4-B9 will occur inside the event listener from step B3
   // B4. TODO - Create a new FormData object from the <form> element reference above
-    var FormData = {
+    let FormData = {
                       imgSrc: form[1].value,
                       imgAlt: form[2].value,
                       titleTxt: form[4].value,
@@ -91,7 +91,7 @@ function initFormHandler() {
                       ingredients: form[17].value,
                     };
     if (FormData.imgSrc == '' || FormData.imgAlt == '' || 
-        FormData.titleTxt == '' || FormData.titleLnk == '' ||
+        FormData.titleTxt == '' || FormData.titleLnk == '' || !form[5].checkValidity() || 
         FormData.organization == '' || FormData.lengthTime == '' || FormData.ingredients == '')
                     return;
     for (let i = 1; i < 6; i++) {
